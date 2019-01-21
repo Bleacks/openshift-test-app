@@ -8,7 +8,7 @@ public class MainVerticle extends AbstractVerticle {
     public void start() {
         Router router = Router.router(vertx);
         router.get("/hello").handler(request -> {
-            request.response().end("Bonjour from Vert.x! " + new java.util.Date() + " on " + hostname);
+            request.response().end("Hello from Vert.x! " + new java.util.Date() + " on " + hostname);
         });
 
         vertx.createHttpServer().requestHandler(router::accept)
